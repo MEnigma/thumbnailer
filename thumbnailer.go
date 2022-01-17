@@ -52,10 +52,7 @@ func (c *FFContext) Thumbnail(dims Dims) (thumb image.Image, err error) {
 	return
 }
 
-func processMedia(rs io.ReadSeeker, src *Source, opts Options,
-) (
-	thumb image.Image, err error,
-) {
+func processMedia(rs io.ReadSeeker, src *Source, opts Options) (thumb image.Image, err error) {
 	c, err := newFFContextWithFormat(rs, inputFormats[src.Mime])
 	if err != nil {
 		return

@@ -25,10 +25,12 @@ int create_context(AVFormatContext** ctx, const char* input_format)
     c->flags |= AVFMT_FLAG_CUSTOM_IO | AVFMT_FLAG_DISCARD_CORRUPT;
 
     AVInputFormat* avif = NULL;
+    int err = 0;
     if (input_format) {
-        avif = av_find_input_format(input_format);
+         err = avformat_open_input(ctx, NULL, av_find_input_format(input_format), NULL);
+    }else{
+        err = avformat_open_input(ctx, NULL, NULL, NULL);
     }
-    int err = avformat_open_input(ctx, NULL, avif, NULL);
     if (err < 0) {
         return err;
     }
@@ -45,7 +47,7 @@ int codec_context(AVCodecContext** avcc, int* stream, AVFormatContext* avfc,
 {
     int err;
     AVStream* st = NULL;
-    AVCodec* codec = NULL;
+    const AVCodec* codec = NULL;
 
     *stream = av_find_best_stream(avfc, type, -1, -1, NULL, 0);
     if (*stream < 0) {
