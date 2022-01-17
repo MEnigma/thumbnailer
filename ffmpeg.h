@@ -1,5 +1,6 @@
 #pragma once
 #include <libavformat/avformat.h>
+#include <libavcodec/avcodec.h>
 #include <pthread.h>
 
 extern int readCallBack(void*, uint8_t*, int);
@@ -13,5 +14,5 @@ void init(void);
 int create_context(AVFormatContext** ctx, const char* input_format);
 
 // Create a AVCodecContext of the desired media type
-int codec_context(AVCodecContext** avcc, int* stream, AVFormatContext* avfc,
+int codec_context(struct AVCodecContext** avcc, int* stream, AVFormatContext* avfc,
     const enum AVMediaType type);
