@@ -1,4 +1,4 @@
-module github.com/MEngima/thumbnailer/v2
+module github.com/MEnigma/thumbnailer/v2
 
 go 1.13
 
