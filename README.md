@@ -1,12 +1,12 @@
-[![GoDoc](https://godoc.org/github.com/bakape/thumbnailer?status.svg)](https://godoc.org/github.com/bakape/thumbnailer)
-[![Build Status](https://travis-ci.com/bakape/thumbnailer.svg?branch=master)](https://travis-ci.com/bakape/thumbnailer)
+[![GoDoc](https://godoc.org/github.com/MEnigma/thumbnailer?status.svg)](https://godoc.org/github.com/MEnigma/thumbnailer)
+[![Build Status](https://travis-ci.com/MEnigma/thumbnailer.svg?branch=master)](https://travis-ci.com/MEnigma/thumbnailer)
 # thumbnailer
 Package thumbnailer provides a more efficient media thumbnailer than available
 with native Go processing libraries through ffmpeg bindings.
 
 Use 
 ```
-go get -u github.com/bakape/thumbnailer/v2
+go get -u github.com/MEnigma/thumbnailer/v2
 ```
 to install the library in your project. 
 
